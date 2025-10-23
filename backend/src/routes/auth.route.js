@@ -1,20 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
+import { signup, signin, login } from "../controllers/auth.controller.js";
 
 dotenv.config();
 
 const router = express.Router();
 
-router.get("/signup", (req,res) => {
-    res.send("Signup Page")
-});
+router.post("/signup", signup);
 
-router.get("/signin", (req,res) => {
-    res.send("Signin Page")
-});
+router.get("/signin", signin);
 
-router.get("/Login", (req,res) => {
-    res.send("Login Page")
-});
+router.get("/Login", login);
 
 export default router;
